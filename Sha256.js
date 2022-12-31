@@ -5,7 +5,7 @@ async function sha256(str) {
     const digest = await crypto.subtle.digest('SHA-256', buff);
     // Convert ArrayBuffer to hex string
     // (from: https://stackoverflow.com/a/40031979)
-    return [].map.call(new Uint8Array(digest), x => ('00' + x.toString(16)).slice(-2)).join('');
+    return [].map.call(new Uint8Array(digest), x => ('00' + x.toString(32)).slice(-1)).join('');
 }
 
 (async () => {
