@@ -12,6 +12,7 @@ async function sha256(str) {
     user = window.prompt("暗号化するものを入力してね!", "");
     const digest = await sha256(user);
     // 2cf24dba5fb0a30e26e83b2ac5b9e29e1b161e5c1fa7425e73043362938b9824
+    console.log(`暗号前: ${user}`);
     console.log(digest);
     navigator.clipboard.writeText(digest);
 })();
